@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product} from './product.model'
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -54,7 +54,7 @@ export class AppComponent {
     }
   ];
 
-  clickProduct(id: number) {  // Llega desde el event emiter del componente
+  clickProduct(id: number): void {  // Llega desde el event emiter del componente
     console.log('product');
     console.log(id);
   }
