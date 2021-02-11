@@ -20,6 +20,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     @Input() product: Product;  // decimos que var. product va a recibir datos de otro componente
     @Output() productClick: EventEmitter<any> = new EventEmitter();  // decimos que enviaremos un evento de tipo producto
 
+    today = new Date();
+
     contructor(): void {
         console.log('constructor');
     }
