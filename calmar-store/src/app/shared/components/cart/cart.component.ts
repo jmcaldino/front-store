@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  itemList: string;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
   }
 
 }

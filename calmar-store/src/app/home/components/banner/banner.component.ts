@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
-
   images: string[] = [
-    'assets/images/web-en-contruccion.png',
-    'assets/images/web-remodelacion.png',
-    'assets/images/web-en-contruccion.png'
+    'assets/images/banner-1.jpg',
+    'assets/images/banner-2.jpg',
+    'assets/images/banner-3.jpg',
   ];
 
-  ngOnInit(): void {
+  constructor() { }
+
+  ngOnInit(): void{
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product.model';
+
+import { Product } from './../../../core/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -7,8 +8,6 @@ import { Product } from '../product.model';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-
-  constructor() { }
 
   products: Product[] = [
     {
@@ -52,13 +51,15 @@ export class ProductsComponent implements OnInit {
       title: 'Stickers',
       price: 80000,
       description: 'bla bla bla bla bla'
-    }
+    },
   ];
 
-  ngOnInit(): void {
+  constructor() { }
+
+  ngOnInit(): void{
   }
 
-  clickProduct(id: number): void {  // Llega desde el event emiter del componente
+  clickProduct(id: number): void{
     console.log('product');
     console.log(id);
   }
