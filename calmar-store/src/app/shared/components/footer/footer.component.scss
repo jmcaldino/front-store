@@ -7,10 +7,23 @@ footer {
   margin-top: 20px;
   background-color: mat-color($primary);
   .box {
-    h3 {
+    h3{
+      color: white;
+    }
+    mat-form-field {
+      color: white;
+    }
+    mat-label{
       color: white;
     }
     input{
+      color: black;
+      background-color: white;
+    }
+    mat-error{
+      color: white;
+    }
+    p{
       color: white;
     }
     ul {

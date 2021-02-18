@@ -34,11 +34,16 @@
             </div>
             <div class="col-xs-12 col-md-4">
               <div class="box">
-                <h3>Contacto</h3>
-                <!-- <mat-form-field color="accent" class="full-width">
-                      <input [formControl]="emailInput" matInput placeholder="Su correo" type="email">
-                    </mat-form-field>
-                    <button (click)="registerMail()" [disabled]="emailInput.invalid" mat-raised-button color="accent">Suscribirse</button> -->
+                <h3>Recibir Ofertas y Promociones</h3>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput [formControl]="emailField"
+                         placeholder=" Ingres&aacute; su correo" class="p-t-5">
+                  <mat-error *ngIf="emailField.hasError('email') && !emailField.hasError('required') && emailField.touched">
+                    Por favor, revisar su email
+                  </mat-error>
+                </mat-form-field>
+                <button (click)="registerMail()" [disabled]="emailField.invalid" mat-raised-button color="accent">Suscribirse</button>
               </div>
             </div>
           </div>

@@ -1,0 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Producto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input placeholder="Id" formControlName="id" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input placeholder="Nombre de Producto" formControlName="title" matInput type="text">
+                    </mat-form-field>
+                    <div *ngIf="form.get('title').errors && form.get('title').dirty">
+                        <mat-error *ngIf="form.get('title').hasError('required')">el nombre de producto es requerido</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input placeholder="Precio" formControlName="price" matInput type="number">
+                    </mat-form-field >
+                    <div *ngIf="priceField.errors && priceField.dirty">
+                        <mat-error *ngIf="priceField.hasError('required')">* el precio es requerido</mat-error>
+                        <mat-error *ngIf="priceField.hasError('price_invalid')">el precio es invalido</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <textarea placeholder="Descripcion" formControlName="description" matInput></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">Guardar</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
