@@ -1,7 +1,7 @@
 <mat-horizontal-stepper #stepper>
     <mat-step>
-        <ng-template matStepLabel>Your Products</ng-template>
-        <div *ngIf="products$ | async as products">
+        <ng-template matStepLabel>Tus Productos</ng-template>
+        <div *ngIf="items$ | async as products">
           <p *ngIf="products.length === 0">No products</p>
           <div class="row" *ngFor="let product of products">
             <div class="col-xs-12 col-sm-2 col-md-2">
@@ -23,6 +23,11 @@
               <div class="box">
                 {{ product.quantity }}
               </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2">
+                <div class="box">
+                    {{ product.subTotal }}
+                </div>
             </div>
           </div>
         </div>
