@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "calmar-store": {
+      "hosting": {
+        "calmar-store": [
+          "calmar-store"
+        ]
+      }
+    }
+  }
+}
