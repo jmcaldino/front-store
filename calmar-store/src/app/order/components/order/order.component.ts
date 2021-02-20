@@ -13,7 +13,7 @@ import { Item } from '../../../core/models/itemProduct.model';
 })
 export class OrderComponent implements OnInit {
 
-  items$: Observable<Item[]>
+  items$: Observable<Item[]>;
 
   constructor(
     private cartService: CartService
@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit {
         const distinctItems = [];
         items.forEach(currentItem => {
           const distinctIds = distinctItems.map(item => item.id);
-          if(distinctIds.indexOf(currentItem.id) === -1){
+          if (distinctIds.indexOf(currentItem.id) === -1){
             currentItem.quantity = 1;
             currentItem.subTotal = currentItem.price;
             distinctItems.push(currentItem);

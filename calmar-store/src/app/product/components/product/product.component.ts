@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   addCart(): void{
     console.log('añadir al carrito');
     this.cartService.addCart(this.product);
-    //this.productClicked.emit(this.product.id);
+    // this.productClicked.emit(this.product.id);
   }
 
 }

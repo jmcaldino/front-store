@@ -22,15 +22,15 @@ export class ProductsListComponent implements OnInit {
   fetchProducts(): void{
     this.productsService.getAllProducts()
     .subscribe(products => {
-      this.products = products
+      this.products = products;
     });
   }
 
   deleteProduct(id: string): void{
     this.productsService.deleteProduct(id).subscribe(deleted => {
       if (deleted){
-        console.log(`?Product ${id} deleted`)
-        this.products = this.products.filter(product => product.id !== id)
+        console.log(`?Product ${id} deleted`);
+        this.products = this.products.filter(product => product.id !== id);
       }else {
         console.error('Unable to delete the product');
       }

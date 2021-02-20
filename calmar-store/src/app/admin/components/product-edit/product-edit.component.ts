@@ -19,7 +19,7 @@ export class ProductEditComponent implements OnInit {
     private productsService: ProductsService,
     private router: Router,
     private activeRoute: ActivatedRoute
-  ) { 
+  ) {
     this.buildForm();
   }
 
@@ -36,12 +36,12 @@ export class ProductEditComponent implements OnInit {
           description: product.description
         });
       });  // ó => { ..form.patchValue(product)});
-    })
+    });
   }
 
   saveProduct(event: Event): void{
     event.preventDefault();
-    if(this.form.valid){
+    if (this.form.valid){
       const product = this.form.value;
       this.productsService.updateProduct(this.id, product)
       .subscribe((newProduct) => {

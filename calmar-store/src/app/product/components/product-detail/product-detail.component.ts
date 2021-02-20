@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
     this.productsService.getProduct(id)
     .subscribe(product => {
       this.product = product;
-    })
+    });
   }
 
   createProduct(): void{
@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
     };
     this.productsService.createProduct(newProduct)
     .subscribe(product => {
-      console.log(product)
+      console.log(product);
     });
   }
 
@@ -52,16 +52,16 @@ export class ProductDetailComponent implements OnInit {
       price: 80000,
       description: 'edicion product'
     };
-    this.productsService.updateProduct('2',updateProduct)
+    this.productsService.updateProduct('2', updateProduct)
     .subscribe(product => {
-      console.log(product)
+      console.log(product);
     });
   }
 
   deleteProduct(): void{
     this.productsService.deleteProduct('321')
     .subscribe(product => {
-      console.log(product)
+      console.log(product);
     });
   }
 

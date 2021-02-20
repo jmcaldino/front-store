@@ -14,13 +14,13 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     ProductFormComponent,
-    NavComponent, 
-    TableComponent, 
-    DashboardComponent, 
-    ProductsListComponent, 
-    FormProductComponent, 
+    NavComponent,
+    TableComponent,
+    DashboardComponent,
+    ProductsListComponent,
+    FormProductComponent,
     ProductEditComponent ],
   imports: [
     CommonModule,
