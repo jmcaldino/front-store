@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 import { finalize } from 'rxjs/operators';
 
@@ -9,6 +10,7 @@ import { MyValidators } from './../../../utils/validators';
 
 import { ProductsService } from './../../../core/services/products/products.service';
 import { Observable } from 'rxjs';
+import { Product } from '../../../core/models/product.model';
 
 @Component({
   selector: 'app-form-product',
@@ -24,7 +26,8 @@ export class FormProductComponent implements OnInit {
     private formBuilder: FormBuilder,
     private productsService: ProductsService,
     private router: Router,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private afs: AngularFirestore
   ) {
     this.buildForm();
   }
@@ -35,11 +38,22 @@ export class FormProductComponent implements OnInit {
   saveProduct(event: Event) {
     event.preventDefault();
     if (this.form.valid) {
+      // const product = this.form.value;
+      // this.productsService.createProduct(product)
+      // .subscribe((newProduct) => {
+      //   console.log(newProduct);
+      //   this.router.navigate(['./admin/products']);
+      // });
       const product = this.form.value;
-      this.productsService.createProduct(product)
-      .subscribe((newProduct) => {
-        console.log(newProduct);
+      const productsCollection = this.afs.collection<Product>('products');
+      productsCollection.add(product).then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        product.id = docRef.id;
+        this.afs.collection("products").doc(docRef.id).update(product);
         this.router.navigate(['./admin/products']);
+      })
+      .catch((error) => {
+          console.error("Error adding document: ", error);
       });
     }
   }
@@ -67,7 +81,7 @@ export class FormProductComponent implements OnInit {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      id: ['', [Validators.required]],
+      id: [''],
       title: ['', [Validators.required]],
       price: ['', [Validators.required, MyValidators.isPriceValid]],
       image: [''],

@@ -6,6 +6,11 @@
             <mat-card-content>
                 <div class="row">
                     <div class="col-xs">
+                        <img *ngIf="img" [src]="img" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
                         <mat-form-field class="full-width">
                             <input placeholder="Nombre de Producto" formControlName="title" matInput type="text">
                         </mat-form-field>
