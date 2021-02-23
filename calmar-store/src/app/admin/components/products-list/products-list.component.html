@@ -19,7 +19,15 @@
               <mat-card-content>
                 <div class="mat-elevation-z8">
                   <div *ngIf="products" class="products-table">
-                    <mat-table [dataSource]="products" class="mat-elevation-z8">
+                      <div>
+                          <mat-form-field appearance="fill" class="full-width">
+                              <mat-label>Buscar Producto</mat-label>
+                              <input matInput matInput (keyup)="applyFilter($event.target.value)" placeholder="Ingrese el nombre del producto que desea buscar">
+                              <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
+                      </div>
+                      <table mat-table [dataSource]="dataSource">
+
                       <!-- <ng-container matColumnDef="id">
                         <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
                         <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
@@ -54,7 +62,8 @@
                   
                       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-                    </mat-table>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
                   </div>
                 </div>
               </mat-card-content>
