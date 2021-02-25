@@ -19,14 +19,14 @@ export class ProductsListComponent implements AfterViewInit {
   dataSource: MatTableDataSource<Product>;
 
   private itemsCollection: AngularFirestoreCollection<Product>;
-  items: Observable<Product[]>;
+  item$: Observable<Product[]>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.itemsCollection = this.afs.collection<Product>('products');
-    this.items = this.itemsCollection.valueChanges();
-    this.items.subscribe(product => {
+    this.item$ = this.itemsCollection.valueChanges();
+    this.item$.subscribe(product => {
       if (product){
         this.dataSource = new MatTableDataSource(product);
         // Assign the paginator *after* dataSource is set

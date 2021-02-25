@@ -9,3 +9,12 @@ nav > a.active {
 .header-row{
   width: 100%;
 }
+
+.mat-toolbar-row{
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #3F51B5;
+}

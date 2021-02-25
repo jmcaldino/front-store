@@ -9,3 +9,66 @@
     object-position: center;
   }
 }
+
+.mat-card {
+  height: auto;
+}
+
+.mat-card-content{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.mat-card-actions {
+  display: flex;
+}
+
+.container-btn { 
+  height: auto;
+  position: relative;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.price {
+  text-align: center;
+  letter-spacing: 0.2ch;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.title-product {
+  height: 70px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: "Lucida Console", "Courier New", monospace;
+  letter-spacing: 0.1ch;
+}
+
+.box-text {
+  height: 100px;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #174482;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: cornflowerblue;
+  color: black;
+}
