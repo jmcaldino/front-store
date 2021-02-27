@@ -78,7 +78,7 @@ Los tipos de Template Expresion válidos pueden ser:
 {{ miMetodo() }} : donde miMetodo() es un método definido en el Component
 También se le puede asignar a un atributo HTML (que espere un string) el valor de una Template Expresion, por ejemplo
 
-<h1 innerText = {{pageTitle}}><h1> ← se asigna un valor “ya procesado” a un Tag HTML
+<div innerText = {{pageTitle}}> </div> ← se asigna un valor “ya procesado” a un Tag HTML
 
 Directivas Propias
 Para crear una directiva
