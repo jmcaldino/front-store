@@ -1,8 +1,7 @@
 <h1>Angular</h2>
 <h1> Comandos bash <h1> 
 <h2> ng serve </h2>
- Para levantar el servidor (puedes enviarle mas datos como puerto o dominio donde quieres que corra, normalmente usa el puerto 4200)
-
+ 
 Para cambiar la ruta en la cual correrá el proyecto:
 
 ng serve --o --host 192.168.1.26 --port {PORT} // cambiar la ruta en la cual correrá el proyecto
