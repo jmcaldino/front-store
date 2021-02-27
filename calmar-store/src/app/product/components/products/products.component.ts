@@ -13,6 +13,7 @@ import { ProductsService } from '../../../core/services/products/products.servic
 export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
+  actualPage: number = 1;
 
   private itemsCollection: AngularFirestoreCollection<Product>;
   item$: Observable<Product[]>;

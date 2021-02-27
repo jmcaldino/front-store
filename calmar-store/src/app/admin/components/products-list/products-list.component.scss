@@ -14,3 +14,7 @@ table {
 .full-width{
     width: 50%;
 }
+
+:host ::ng-deep.mat-paginator .mat-paginator-container{
+    justify-content: flex-start;
+}

@@ -1,9 +1,19 @@
 <div class="header">
 </div>
-<div class="product-grid">
-  <app-product
-    *ngFor="let product of products"
-    (productClicked)="clickProduct($event)"
-    [product]="product">
-  </app-product>
+<div class="row">
+  <div class="col-xs">
+    <div class="product-grid">
+      <app-product *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: actualPage }" (productClicked)="clickProduct($event)"
+        [product]="product">
+      </app-product>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs">
+    <div class="d-flex justify-content-center text-xs-center center">
+      <pagination-controls responsive="true" previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="actualPage = $event">
+      </pagination-controls>
+    </div>
+  </div>
 </div>
