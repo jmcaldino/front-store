@@ -9,19 +9,23 @@ import { ProductRoutingModule } from './product-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { MaterialModule } from './../material/material.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LayoutModule } from '@angular/cdk/layout';
+import { SidenavLeftComponent } from './components/sidenav-left/sidenav-left.component';
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductDetailComponent,
-    ProductsComponent
+    ProductsComponent,
+    SidenavLeftComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     ProductRoutingModule,
     MaterialModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LayoutModule
   ]
 })
 export class ProductModule {

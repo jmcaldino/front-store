@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 
 import { Product } from './../../../core/models/product.model';
-import { ProductsService } from '../../../core/services/products/products.service';
+//import { ProductsService } from '../../../core/services/products/products.service';
 
 @Component({
   selector: 'app-products',
@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
   item$: Observable<Product[]>;
 
   constructor(
-    private productsService: ProductsService,
+    //private productsService: ProductsService,
     private afs: AngularFirestore,
   ) { 
     this.itemsCollection = this.afs.collection<Product>('products');
@@ -36,17 +36,19 @@ export class ProductsComponent implements OnInit {
   }
 
   fetchProducts() {
+    this.item$ = this.itemsCollection.valueChanges();
     // this.productsService.getAllProducts()
     // .subscribe(products => {
     //   this.products = products;
     // });
-    this.item$.subscribe(product => {
-      if (product){
-        this.products = product;
-      }else {
-        console.error('Unable to delete the product');
-      }
-    });
+
+    // this.item$.subscribe(product => {
+    //   if (product){
+    //     this.products = product;
+    //   }else {
+    //     console.error('Unable to delete the product');
+    //   }
+    // });
   }
 
 }

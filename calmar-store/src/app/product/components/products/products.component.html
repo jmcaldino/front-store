@@ -1,5 +1,8 @@
-<div class="header">
-</div>
+<!-- <div class="header">
+  <p>Version 2</p>
+</div> -->
+
+<div *ngIf="(item$ | async) as products" >
 <div class="row">
   <div class="col-xs">
     <div class="product-grid">
@@ -16,4 +19,5 @@
       </pagination-controls>
     </div>
   </div>
+</div>
 </div>

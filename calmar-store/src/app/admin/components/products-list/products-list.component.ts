@@ -21,7 +21,8 @@ export class ProductsListComponent implements AfterViewInit {
   private itemsCollection: AngularFirestoreCollection<Product>;
   item$: Observable<Product[]>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.itemsCollection = this.afs.collection<Product>('products');
@@ -35,7 +36,7 @@ export class ProductsListComponent implements AfterViewInit {
         console.error('Unable to delete the product');
       }
     });
-    this.dataSource.paginator;
+    //this.dataSource.paginator;
   }
 
   constructor(

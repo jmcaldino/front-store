@@ -27,7 +27,7 @@
     .container {
        max-width: 1110px;
        padding-right: 16px;
-       padding-left: 16px;
+       padding-left: 0px;
      }
 }
 
@@ -38,13 +38,15 @@
     .container {
       max-width: 1110px;
       padding-right: 16px;
-      padding-left: 16px;
+      padding-left: 0px;
     }
 }
 
 @media(min-width:992px){    
     .product-grid{
         grid-template-columns: repeat(4, 1fr);
+        width: 97%;
+        margin-left: 16px;
     }
     .container {
       max-width: 1110px;
